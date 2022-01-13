@@ -1,6 +1,5 @@
 from typing import Optional
 
-
 class PaymentMethod:
     def __init__(self, name: str, enabled: bool, id: Optional[int] = None):
         self.id = id

@@ -27,7 +27,7 @@ class Product:
 
     def add_discount(self, discount: ProductDiscount):
         if not discount.payment_method.enabled:
-            raise PaymentMethodDisabled
+            raise PaymentMethodDisabled("Metodo de pagamento desabilitado")
 
         has_discount = (
             len(
@@ -40,7 +40,8 @@ class Product:
             )
             > 0
         )
+
         if not has_discount:
-            raise DiscountExists
+            raise DiscountExists("Já existe um desconto para essa forma de pagamento")
 
         self.discounts.append(discount)

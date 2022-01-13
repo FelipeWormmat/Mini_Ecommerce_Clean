@@ -1,6 +1,6 @@
 class DiscountExists(Exception):
-    public_message = "Já existe um desconto para essa forma de pagamento"
+    pass
 
 
 class PaymentMethodDisabled(Exception):
-    public_message = "Metodo de pagamento desabilitado"
+    pass

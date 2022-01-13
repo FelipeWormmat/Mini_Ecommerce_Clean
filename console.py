@@ -12,6 +12,7 @@ from src.adapter.repositories.payment_method_repository import PaymentMethodRepo
 from src.adapter.repositories.product_discount_repository import ProductDiscountsRepository
 from src.adapter.database import Session
 from src.adapter.orm import start_mapper
+from src.services.sqlalchemy_uow import SqlAlchemyUnitOfWork
 
 from datetime import datetime
 
@@ -19,6 +20,8 @@ from datetime import datetime
 start_mapper()
 
 db = Session()
+uow =SqlAlchemyUnitOfWork(db)
+
 
 
 coupon_repository = CouponRepository(db)
